@@ -41,6 +41,18 @@ public class RadioTest {
     }
 
     @Test
+    public void  addingVolumeTest() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(4);
+
+        radio.increaseVolume();
+        int actual = radio.getCurrentVolume();
+        int expected = 5;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void  soundMinTest() {
         Radio radio = new Radio();
         radio.setCurrentVolume(0);
@@ -48,6 +60,18 @@ public class RadioTest {
         radio.decreaseVolume();
         int actual = radio.getCurrentVolume();
         int expected = 0;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void  volumeReductionTest() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(3);
+
+        radio.decreaseVolume();
+        int actual = radio.getCurrentVolume();
+        int expected = 2;
 
         Assertions.assertEquals(expected, actual);
     }
