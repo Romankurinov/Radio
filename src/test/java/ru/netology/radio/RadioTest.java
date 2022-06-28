@@ -16,6 +16,17 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    public void  turningOnTheRadioStationTest() {
+        Radio radio = new Radio(15);
+        radio.setCurrentStation(14);
+
+        radio.next();
+        int actual = radio.getCurrentStation();
+        int expected = 0;
+
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     public void  radioStationMoreMaxTest() {
